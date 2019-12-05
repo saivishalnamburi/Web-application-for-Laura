@@ -5,14 +5,13 @@
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Peer Reveiw</title>
+<title>Peer ReveiwPeer Reveiw</title>
 
 <!-- Bootstrap -->
 <link rel="stylesheet" href="css/bootstrap.css">
@@ -25,6 +24,7 @@
     <![endif]-->
 </head>
 <body>
+
 <?php  include('nav.inc'); ?>
 
 <?php  include('banner.inc'); ?>
@@ -49,7 +49,7 @@
         <div class="caption">
           <h3>Group Details</h3>
           <p>Check students who have done the feedback</p>
-          <p><a href="groups.php" class="btn btn-primary" role="button"><span class="glyphicon " aria-hidden="true"></span> Groups </a> </p>
+          <p><a href="groups.php" class="btn btn-primary" role="button"><span class="glyphicon " aria-hidden="true"></span> Group </a> </p>
         </div>
       </div>
     </div>
@@ -68,6 +68,7 @@
   
 </div>
 <hr>
+
 
 <?php 	include('footer.inc'); ?>
 

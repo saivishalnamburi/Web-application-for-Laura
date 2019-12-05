@@ -1,7 +1,9 @@
 <?php
 
-$con = mysqli_connect("localhost","root","","student");
+$con = mysqli_connect("localhost","ictatjcu_subject","123zxc","ictatjcu_subject");
 
+$sql = "SELECT * FROM groups INNER JOIN student_details ON groups.pname = student_details.pname";
+$result = mysqli_query($connect, $sql);
 if($con)
 {
 	
@@ -9,7 +11,8 @@ if($con)
 	$handle = fopen($file,"r");
 	$i = 0;
 	
-function randStrGen($len){
+function randStrGen($len)
+{
     $result = "";
     $chars = "abcdefghijklmnopqrstuvwxyz0123456789";
     $charArray = str_split($chars);
@@ -54,3 +57,40 @@ else
 	echo"connection failed";
 }
 ?>
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Student Data</title> 
+</head>
+
+<body>
+	<div class="container" style="width:500px;">
+	<h3 align="">
+	<div class="tabel-responsive">
+		<table class="table table-striped">
+			<tr>
+				<th>groups</th>
+				<th>student_details</th>
+				
+			</tr>
+			<?php
+			if(mysqli_num_rows($result)>0)
+			{
+				while($row = mysqli_fetch_array($result))
+				{
+					?>
+					<tr>
+						<td> <?php echo $row["groups"]; ?> </td>
+						<td> <?php echo $row["student_details"]; ?> </td>
+					</tr>
+						?>php
+				}
+			}
+			?>
+		</table>
+		</div>
+		</div>
+</body>
+</html>

@@ -39,7 +39,7 @@ $email= $row['email'];
    $mail ->Subject = $mailSub;
    $mail ->Body = $mailMsg;
    $mail ->AddAddress($email);
- }
+ 
 
 
    if(!$mail->Send())
@@ -52,7 +52,7 @@ $email= $row['email'];
    }
 
 
-
+}
 
 
    

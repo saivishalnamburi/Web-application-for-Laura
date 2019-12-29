@@ -1,43 +1,27 @@
 <?php
-
-	include('db_conn.php');
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Peer Reveiw</title>
-
-<!-- Bootstrap -->
-<link rel="stylesheet" href="css/bootstrap.css">
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-
-<?php include('nav.inc'); ?>
-
-<?php  include('banner.inc'); ?>
- 
- 
-  <form name="contactform" method="post" action="email.php">
-
-</form>
-
-<?php 	include('footer.inc'); ?>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="js/jquery-1.11.3.min.js"></script> 
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="js/bootstrap.js"></script>
-</body>
-</html>
+session_start(); // Starting Session
+$error = ''; // Variable To Store Error Message
+if (isset($_POST['submit'])) {
+if (empty($_POST['login']) || empty($_POST['token'])) {
+$error = "JC-Number or Token is invalid";
+}
+else{
+// Define $username and $password
+$login = $_POST['login'];
+$token = $_POST['token'];
+// mysqli_connect() function opens a new connection to the MySQL server.
+$conn = mysqli_connect("localhost", "root", "", "student");
+// SQL query to fetch information of registerd users and finds user match.
+$query = "SELECT login, token from student_details where login=? AND token=? LIMIT 1";
+// To protect MySQL injection for Security purpose
+$stmt = $conn->prepare($query);
+$stmt->bind_param("ss", $login, $token);
+$stmt->execute();
+$stmt->bind_result($login, $token);
+$stmt->store_result();
+if($stmt->fetch()) //fetching the contents of the row {
+$_SESSION['login_user'] = $login; // Initializing Session
+header("location: profile.php"); // Redirecting To Profile Page
+}
+//mysqli_close($conn); // Closing Connection
+}

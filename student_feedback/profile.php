@@ -60,7 +60,7 @@
 
 								echo "<input type = \"hidden\" name= \"jc_giving_feedback\" value=\"$jc_giving_feedback\" >";
 
-								//echo "<input type=\"hidden\" name=\"jcnumber".$i."\" value=\" $jc_number\">";
+								
 
 
 								

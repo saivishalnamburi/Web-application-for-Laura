@@ -1,9 +1,26 @@
 <?php 
 
-//print_r ($_POST);
+// Turn off error reporting
+error_reporting(0);
+
+// Report runtime errors
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
+// Report all errors
+error_reporting(E_ALL);
+
+// Same as error_reporting(E_ALL);
+ini_set("error_reporting", E_ALL);
+
+// Report all errors except E_NOTICE
+error_reporting(E_ALL & ~E_NOTICE);
+
+print_r ($_POST);
 $conn = mysqli_connect("localhost", "root", "", "student"); // Establishing Connection with Server
 
-if(isset($_POST['submit'])){
+
+
+if(isset($_POST)){
     if (isset ( $_POST["jcnumber1"]))
     {
         $jc_giving_feedback =  $_POST["jc_giving_feedback"];
@@ -20,7 +37,9 @@ if(isset($_POST['submit'])){
         if($jc_giving_feedback !=''|| $jcnumber1 !='' || $ct1 !=''|| $ts1 !='' || $ls1 !=''|| $tcs1 !='' || $wps1 !=''|| $ya1 !='' || $ta1 !=''|| $wa1 !='' || $c1 !='')
         {
             //insert query into sql
-            $query = mysqli_query($conn,"insert into student_feedback(jc_receiving_feedback, jc_giving_feedback, cb_total, teamwork_total, leadership_total, tc_total, wp_total, grade_you_would_assign, grade_they_would_assign, work_again, relative_contribution ) VALUES  ($jcnumber1, $jc_giving_feedback, $ct1,$ts1,$ls1,$tcs1,$wps1,$ya1,$ta1,$wa1,$c1)");
+            $query = mysqli_query($conn,"insert into student_feedback(jc_receiving_feedback, jc_giving_feedback, cb_total, teamwork_total, leadership_total, tc_total, wp_total, grade_you_would_assign, grade_they_would_assign, work_again, relative_contribution ) VALUES  ('$jcnumber1', '$jc_giving_feedback', $ct1,$ts1,$ls1,$tcs1,$wps1,'$ya1','$ta1','$wa1',$c1)");
+            echo "insert into student_feedback(jc_receiving_feedback, jc_giving_feedback, cb_total, teamwork_total, leadership_total, tc_total, wp_total, grade_you_would_assign, grade_they_would_assign, work_again, relative_contribution ) VALUES  ($jcnumber1, $jc_giving_feedback, $ct1,$ts1,$ls1,$tcs1,$wps1,$ya1,$ta1,$wa1,$c1)";
+            echo $conn->error;
             echo "<br/><br/><span>Data of the First student Inserted successfully...!!</span>";
         }
         else
@@ -47,7 +66,7 @@ if(isset($_POST['submit'])){
         if($jc_giving_feedback !=''|| $jcnumber2 !='' || $ct2 !=''|| $ts2 !='' || $ls2 !=''|| $tcs2 !='' || $wps2 !=''|| $ya2 !='' || $ta2 !=''|| $wa2 !='' || $c2 !='')
         {
             //insert query into sql
-            $query = mysqli_query($conn,"insert into student_feedback(jc_receiving_feedback, jc_giving_feedback, cb_total, teamwork_total, leadership_total, tc_total, wp_total, grade_you_would_assign, grade_they_would_assign, work_again, relative_contribution ) VALUES  ($jcnumber2, $jc_giving_feedback, $ct2,$ts2,$ls2,$tcs2,$wps2,$ya2,$ta2,$wa2,$c2)");
+            $query = mysqli_query($conn,"insert into student_feedback(jc_receiving_feedback, jc_giving_feedback, cb_total, teamwork_total, leadership_total, tc_total, wp_total, grade_you_would_assign, grade_they_would_assign, work_again, relative_contribution ) VALUES  ('$jcnumber2', '$jc_giving_feedback', $ct2,$ts2,$ls2,$tcs2,$wps2,'$ya2','$ta2','$wa2',$c2)");
             echo "<br/><br/><span>Data of the Second student Inserted successfully...!!</span>";
         }
         else
@@ -74,7 +93,7 @@ if(isset($_POST['submit'])){
         if($jc_giving_feedback !=''|| $jcnumber3 !='' || $ct3 !=''|| $ts3 !='' || $ls3 !=''|| $tcs3 !='' || $wps3 !=''|| $ya3 !='' || $ta3 !=''|| $wa3 !='' || $c3 !='')
         {
             //insert query into sql
-            $query = mysqli_query($conn,"insert into student_feedback(jc_receiving_feedback, jc_giving_feedback, cb_total, teamwork_total, leadership_total, tc_total, wp_total, grade_you_would_assign, grade_they_would_assign, work_again, relative_contribution ) VALUES  ($jcnumber3, $jc_giving_feedback, $ct3,$ts3,$ls3,$tcs3,$wps3,$ya3,$ta3,$wa3,$c3)");
+            $query = mysqli_query($conn,"insert into student_feedback(jc_receiving_feedback, jc_giving_feedback, cb_total, teamwork_total, leadership_total, tc_total, wp_total, grade_you_would_assign, grade_they_would_assign, work_again, relative_contribution ) VALUES  ('$jcnumber3', '$jc_giving_feedback', $ct3,$ts3,$ls3,$tcs3,$wps3,'$ya3','$ta3','$wa3',$c3)");
             echo "<br/><br/><span>Data of the Third student Inserted successfully...!!</span>";
         }
         else
@@ -101,7 +120,7 @@ if(isset($_POST['submit'])){
         if($jc_giving_feedback !=''|| $jcnumber4 !='' || $ct4 !=''|| $ts4 !='' || $ls4 !=''|| $tcs4 !='' || $wps4 !=''|| $ya4 !='' || $ta4 !=''|| $wa4 !='' || $c4 !='')
         {
             //insert query into sql
-            $query = mysqli_query($conn,"insert into student_feedback(jc_receiving_feedback, jc_giving_feedback, cb_total, teamwork_total, leadership_total, tc_total, wp_total, grade_you_would_assign, grade_they_would_assign, work_again, relative_contribution ) VALUES  ($jcnumber4, $jc_giving_feedback, $ct4,$ts4,$ls4,$tcs4,$wps4,$ya4,$ta4,$wa4,$c4)");
+            $query = mysqli_query($conn,"insert into student_feedback(jc_receiving_feedback, jc_giving_feedback, cb_total, teamwork_total, leadership_total, tc_total, wp_total, grade_you_would_assign, grade_they_would_assign, work_again, relative_contribution ) VALUES  ('$jcnumber4', '$jc_giving_feedback', $ct4,$ts4,$ls4,$tcs4,$wps4,'$ya4','$ta4','$wa4',$c4)");
             echo "<br/><br/><span>Data of the Fourth student Inserted successfully...!!</span>";
         }
         else
@@ -120,7 +139,7 @@ if(isset($_POST['submit'])){
         if($jc_giving_feedback !=''|| $comment !='' )
         {
             //insert query into sql
-            $query = mysqli_query($conn,"insert into project_feedback(jc_giving_feedback, comments ) VALUES  ($jc_giving_feedback,$comment)");
+            $query = mysqli_query($conn,"insert into project_feedback(jc_giving_feedback, comments ) VALUES  ('$jc_giving_feedback','$comment')");
             echo "<br/><br/><span> Student Comments Inserted successfully...!!</span>";
         }
         else

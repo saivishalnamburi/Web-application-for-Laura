@@ -50,40 +50,41 @@ echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
 <hr>
 <div class="container">
   <div class="row text-center">
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <div class="thumbnail"> <img src="students.jpg" alt="Thumbnail Image 1" class="img-responsive">
-        <div class="caption">
-          <h3>Student Center</h3>
-          <p>Upload csv file with student details</p>
-          <p>&nbsp;</p>
-          <p><a href="students.php" class="btn btn-primary" role="button"><span class="glyphicon" aria-hidden="true"></span> Uplaod Files</a></p>
-        </div>
-      </div>
-    </div>
-    
-    
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <div class="thumbnail"> <img src="images/groups.jpg" alt="Thumbnail Image 1" width="305" height="58%" class="img-responsive">
-        <div class="caption">
-          <h3>Groups Details</h3>
-          <p>Veiw Student Details.</p>
-          <br>
-          <p><a href="groups.php" class="btn btn-primary" role="button"><span class="glyphicon" aria-hidden="true"></span> Groups </a> </p>
-        </div>
-      </div>
-    </div>
-<div class="col-sm-4 col-md-4 col-lg-4">
-      <div class="thumbnail"> <img src="images/home-email.jpg" alt="Thumbnail Image 1" width="305" height="58%" class="img-responsive">
-        <div class="caption">
-          <h3>Email</h3>
-          <p>Send email to students.</p>
-          <br>
-          <p><a href="email.php" class="btn btn-primary" role="button"><span class="glyphicon" aria-hidden="true"></span> Email </a> </p>
-        </div>
-      </div>
-    </div>
-    
+  
+      <form action="veiwclientdetails.php" method="post">
+		
+		<h3>Client Details</h3>
+		<div class="caption"> 
+		
+		<h4>Subject Code</h4>
+		<input class="input" name="subjectCode" type="text" value="">
 
+		<h4>Team Name:</h4>
+		<input class="input" name="teamName" type="text" value="">
+
+
+		<h4>Client Name:</h4>
+		<input class="input" name="clientName" type="text" value="">
+
+		<h4>Client Email:</h4>
+		<input class="input" name="clientEmail" type="text" value="">
+ 
+		<h4>Client Phone Number:</h4>
+		<input class="input" name="clientPhoneNumber" type="text" value="">
+		<br>
+		<br>
+
+		<input class="submit" name="Insert" type="submit" class="btn btn-primary" role="button"><span class="glyphicon" aria-hidden="true">
+		</form>
+   </div>
+    </div>
+    
+    
+  </div>
+  
+  
+</div></div></div>
+<hr>
 
 <?php  include('footer.inc'); ?>
 

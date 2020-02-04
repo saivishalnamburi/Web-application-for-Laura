@@ -12,24 +12,7 @@ $con = mysqli_connect("localhost","root","","student");
 <title>Peer Reveiw</title>
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="css/bootstrap.css">
-<style>
-	table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-}
-
-th, td {
-  text-align: left;
-  padding: 16px;
-}
-
-tr:nth-child(even) {
-  background-color: #99b3ff;
-}
-</style>	
+<link rel="stylesheet" href="/css/bootstrap.css">
 
 </head>
 
@@ -39,7 +22,7 @@ tr:nth-child(even) {
 
 <?php  include('banner.inc'); ?>
 
-<body>
+
 <hr>
 <h1 class="text-center">Peer Reveiw</h1>
 <hr>
@@ -129,6 +112,7 @@ tr:nth-child(even) {
                               <select  onchange="findCitizenshipTotal()" type="text" name="citizenshiBehaviour" id="A5">
                                 <option value = "0">0
                                 <option value = "1">1
+
                                 <option value = "2">2
                                 <option value = "3">3
                                 <option value = "4">4
@@ -589,7 +573,8 @@ tr:nth-child(even) {
                                                     <option value = "Yes">Yes
                                                     <option value = "No">No
                                                         
-                                        </tr>
+                                        </td>                       
+                                </tr>
                         
                                 <tr>
                                         <td>Relative contribution to projects (divide 100 points BETWEEN all your group members – total points allocated = 100)</td>
@@ -597,7 +582,11 @@ tr:nth-child(even) {
                                                 <input type="text" name="Relative score" value="">                                              
                                         </td>                       
                                 </tr>
-<script type="text/javascript">
+</div>
+	
+		</div>
+
+ <script type="text/javascript">
                     function findCitizenshipTotal(){
                         var arr = document.getElementsByName('citizenshiBehaviour');
                         var tot=0;
@@ -665,18 +654,21 @@ tr:nth-child(even) {
 
 
 
+
 <script src="file:///C|/Users/Vishal/Desktop/ondex/js/jquery-1.11.3.min.js"></script> 
 
 <script src="file:///C|/Users/Vishal/Desktop/ondex/js/bootstrap.js"></script>
 </body>
 
 
+</body>
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Copyright © Team-7 All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
 </html>
-
-
-
-
-
-
-
-

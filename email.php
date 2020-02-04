@@ -1,6 +1,6 @@
 <?php
 
-	include('db_conn.php');
+	include('connection.php');
 
 ?>
 
@@ -15,7 +15,8 @@
 
 <!-- Bootstrap -->
 <link rel="stylesheet" href="css/bootstrap.css">
-
+<link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 
@@ -23,57 +24,43 @@
 
 <?php  include('banner.inc'); ?>
 
-  <form name="contactform" method="post" action="email.php">
-<table width="450px">
-<tr>
- <td valign="top">
-  <label for="first_name">First Name *</label>
- </td>
- <td valign="top">
-  <input  type="text" name="first_name" maxlength="50" size="30">
- </td>
-</tr>
-<tr>
- <td valign="top"">
-  <label for="last_name">Last Name *</label>
- </td>
- <td valign="top">
-  <input  type="text" name="last_name" maxlength="50" size="30">
- </td>
-</tr>
-<tr>
- <td valign="top">
-  <label for="email">Email Address *</label>
- </td>
- <td valign="top">
-  <input  type="text" name="email" maxlength="80" size="30">
- </td>
-</tr>
-<tr>
- <td valign="top">
-  <label for="telephone">Telephone Number</label>
- </td>
- <td valign="top">
-  <input  type="text" name="telephone" maxlength="30" size="30">
- </td>
-</tr>
-<tr>
- <td valign="top">
-  <label for="comments">Comments *</label>
- </td>
- <td valign="top">
-  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
- </td>
-</tr>
-<tr>
  <td colspan="2" style="text-align:center">
-  <input type="submit" value="Submit">   <a href="http://www.freecontactform.com/email_form.php">Email Form</a>
+ <body>
+ 
+ 	<div id="login">
+  		<div class="row text-center">
+   			
+    		<h2>Email</h2>
+  		  	
+   		  	<div class="col-sm-8 col-md-8 col-lg-8">
+      <div class="thumbnail"> <img src="images/email.png" alt="Thumbnail Image" width="305" height="58%" class="img-responsive">
+        <form method="post" action="Email/send_mail.php">        
+        		<label>Subject </label>
+                <input id="name" name="" placeholder="Enter Subject" type="text" name="mail_sub">
+       			<br/>
+       			<label> Message </label>
+       			<input id="name" name="" placeholder="Enter Message" type="text" name="mail_sub">
+       				<br><br>
+            	<input type="submit" value="Send Email">
+        	</form>
+      </div>
+    </div>
+       
+	</div>
+</div>
+       
+        
+    </body>
  </td>
 </tr>
 </table>
 </form>
 
-<?php 	include('footer.inc'); ?>
+
+<br>
+<hr>
+
+<?php  include('footer.inc'); ?>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="js/jquery-1.11.3.min.js"></script> 

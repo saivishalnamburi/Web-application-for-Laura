@@ -1,43 +1,4 @@
-<?php
-
-$con = mysqli_connect("localhost","root","","student");
-?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Peer ReveiwPeer Reveiw</title>
-
-<!-- Bootstrap -->
-<link rel="stylesheet" href="css/bootstrap.css">
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-
-<?php  include('nav.inc'); ?>
-
-<?php  include('banner.inc'); ?>
-
-
-<hr>
-<h2 class="text-center">Peer Reveiw</h2>
-<hr>
-<div class="container">
-  <div class="row text-center">
-    
-    
-    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-             <form action = "veiw_student_details_process.php" method = "post">
+ <form action = "veiw_student_details_process.php" method = "post">
             <?php
 
             $conn = mysqli_connect("localhost","root","","student");// database connection
@@ -51,16 +12,9 @@ $con = mysqli_connect("localhost","root","","student");
                 echo '<option value="' . $row["scode"] . '">' . $row["scode"] . '</option>';  
                     
                 }
-                
-                
-            
-
-            echo "</select>";
-            
-            
-
-            echo "</br>";
-            echo "</br>";
+                echo "</select>";
+                echo "</br>";
+	 			echo "</br>";
 
 
             //Selecting study period
@@ -103,21 +57,3 @@ $con = mysqli_connect("localhost","root","","student");
             ?>
             <input type="submit" name="submit" />
         </form>
-    </div>
-    
-  </div>
-  
-  
-</div>
-<hr>
-
-
-<?php  include('footer.inc'); ?>
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="js/jquery-1.11.3.min.js"></script> 
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="js/bootstrap.js"></script>
-</body>
-</html>

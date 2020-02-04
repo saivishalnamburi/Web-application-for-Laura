@@ -1,8 +1,9 @@
+
 <footer class="text-center">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <p>Copyright © Team-7 All rights reserved.</p>
+        <h2>Copyright © Team-7 Peer Review.</h2>
       </div>
     </div>
   </div>

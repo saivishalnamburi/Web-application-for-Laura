@@ -1,18 +1,6 @@
 /*----------------------------------------------
 CSS Settings For HTML Div ExactCenter
 ------------------------------------------------*/
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-tr:hover {background-color:#f5f5f5;}
 span {
 color:red
 }
@@ -37,7 +25,7 @@ width:450px;
 border-radius:10px;
 border:2px solid #ccc;
 padding:10px 40px 25px;
-background-color: #F31215 ;
+background-color:#b6e6ff;
 }
 input[type=text],input[type=password]
 {
@@ -53,7 +41,7 @@ input[type=submit]
 width:100%;
 background-color:#2f90ff;
 color:#fff;
-border:2px solid #5C4141;
+border:2px solid #white;
 padding:10px;
 font-size:20px;
 cursor:pointer;
@@ -70,7 +58,7 @@ background-color:#DCE6F7
 {
 float:right;
 padding:5px;
-border:10px gray;
+border:dashed 1px gray
 }
 a
 {
@@ -79,4 +67,4 @@ color:#6495ed
 }
 i
 {
-}
+color:#6495ed

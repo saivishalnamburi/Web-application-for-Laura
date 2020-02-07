@@ -16,6 +16,7 @@ ini_set("error_reporting", E_ALL);
 error_reporting(E_ALL & ~E_NOTICE);
 
 print_r ($_POST);
+
 $conn = mysqli_connect("localhost", "root", "", "student"); // Establishing Connection with Server
 
 
